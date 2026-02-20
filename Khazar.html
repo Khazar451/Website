@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Computer Engineering Student</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nvidia: '#76b900',
+                        dark: '#1a1a1a',
+                        darker: '#111111',
+                        card: '#242424'
+                    },
+                    fontFamily: {
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #76b900; }
+    </style>
+</head>
+<body class="bg-darker text-gray-300 font-sans antialiased selection:bg-nvidia selection:text-black">
+
+    <nav class="fixed w-full z-50 bg-darker/90 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-white tracking-tighter">
+                <span class="text-nvidia">&lt;</span>Dev<span class="text-nvidia">/&gt;</span>
+            </a>
+            <div class="space-x-8 text-sm font-medium hidden md:block">
+                <a href="#about" class="hover:text-nvidia transition-colors">About</a>
+                <a href="#stack" class="hover:text-nvidia transition-colors">Tech Stack</a>
+                <a href="#projects" class="hover:text-nvidia transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-nvidia transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center justify-center pt-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-block mb-4 px-3 py-1 rounded-full bg-nvidia/10 text-nvidia text-sm font-mono border border-nvidia/20">
+                Open to Internship Opportunities
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+                Building Systems that <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-nvidia to-green-400">Think & Act.</span>
+            </h1>
+            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Computer Engineering Student at Manisa Celal Bayar University. 
+                Merging strong Java foundations with emerging Agentic AI technologies.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#projects" class="px-8 py-3 bg-nvidia text-darker font-bold rounded hover:bg-green-400 transition-colors">
+                    View Projects
+                </a>
+                <a href="#contact" class="px-8 py-3 border border-gray-700 rounded hover:border-nvidia hover:text-nvidia transition-colors">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-dark">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-nvidia pl-4">About Me</h2>
+            <div class="prose prose-invert max-w-none text-gray-400">
+                <p class="mb-4">
+                    I am a second-year Computer Engineering student based in Turkey (originally from Azerbaijan). My academic journey has been defined by a rigorous focus on the fundamentals: <strong>Data Structures, Algorithms, and Automata Theory</strong>.
+                </p>
+                <p class="mb-4">
+                    While my core coursework has built a strong proficiency in <strong>Java and Spring Boot</strong>, my current passion lies in the intersection of software engineering and Artificial Intelligence. I am actively upskilling in <strong>Python for AI</strong>, with a specific interest in autonomous agents and Large Language Models.
+                </p>
+                <p>
+                    When I'm not coding, I enjoy dissecting complex systems—whether that's analyzing electric circuits.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="stack" class="py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Technical Arsenal</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                
+                <div class="p-6 bg-card rounded-lg border border-gray-800 hover:border-nvidia/50 transition-colors group">
+                    <h3 class="text-nvidia font-mono mb-2">01. Languages</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>Java (Advanced)</li>
+                        <li>Python (AI Focus)</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 bg-card rounded-lg border border-gray-800 hover:border-nvidia/50 transition-colors group">
+                    <h3 class="text-nvidia font-mono mb-2">02. Frameworks</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>Spring Boot</li>
+                        <li>LangChain (Learning)</li>
+                        <li>NVIDIA NIMs (Goal)</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 bg-card rounded-lg border border-gray-800 hover:border-nvidia/50 transition-colors group">
+                    <h3 class="text-nvidia font-mono mb-2">03. CS Core</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>Data Structures</li>
+                        <li>Automata Theory</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 bg-card rounded-lg border border-gray-800 hover:border-nvidia/50 transition-colors group">
+                    <h3 class="text-nvidia font-mono mb-2">04. Tools</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>Git & GitHub</li>
+                        <li>IntelliJ IDEA</li>
+                        <li>VS Code</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-dark">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white mb-12 border-l-4 border-nvidia pl-4">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <div class="bg-card p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition-all">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-white">Digital Culture Map (TÜBİTAK 2209-B)</h3>
+                        <span class="text-xs font-mono bg-blue-900 text-blue-300 px-2 py-1 rounded">Research</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">
+                        Designed a project for "Interactive Digital Culture Map with Multi-layered Acoustic and Environmental Monitoring." Focuses on preserving urban cultural heritage through sensor data.
+                    </p>
+                    <div class="flex gap-2 text-xs font-mono text-gray-500">
+                        <span>#ML/AI</span> <span>#DataAnalysis</span> <span>#Research</span>
+                    </div>
+                </div>
+
+                <div class="bg-card p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition-all">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-white">JPMorgan Chase Virtual Internship</h3>
+                        <span class="text-xs font-mono bg-green-900 text-green-300 px-2 py-1 rounded">Enterprise</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">
+                        Completed backend engineering tasks involving <strong>Java Spring Boot</strong>. Patched proprietary codebases and implemented RESTful API endpoints for financial data visualization.
+                    </p>
+                    <div class="flex gap-2 text-xs font-mono text-gray-500">
+                        <span>#Java</span> <span>#SpringBoot</span> <span>#Backend</span>
+                    </div>
+                </div>
+
+                <div class="bg-card p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition-all">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-white">Library & E-Commerce Systems</h3>
+                        <span class="text-xs font-mono bg-purple-900 text-purple-300 px-2 py-1 rounded">Academic</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">
+                        Developed object-oriented applications during university coursework. Features include user authentication, inventory management, and custom data persistence.
+                    </p>
+                    <div class="flex gap-2 text-xs font-mono text-gray-500">
+                        <span>#OOP</span> <span>#Java</span> <span>#SystemDesign</span>
+                    </div>
+                </div>
+
+                <div class="bg-card p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition-all">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-white">Algorithmic Challenges</h3>
+                        <span class="text-xs font-mono bg-yellow-900 text-yellow-300 px-2 py-1 rounded">Logic</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">
+                        Solved complex logic problems including the HENNGE admission challenge (Recursion & TOTP) and implemented custom Data Structures like a Binary Search Tree (BST) checker.
+                    </p>
+                    <div class="flex gap-2 text-xs font-mono text-gray-500">
+                        <span>#Algorithms</span> <span>#Recursion</span> <span>#DataStructures</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 text-center">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white mb-6">Ready to Collaborate?</h2>
+            <p class="text-gray-400 mb-10">
+                I am currently open to summer internships and research opportunities in AI and Software Engineering.
+            </p>
+            <a href="mailto:your.email@example.com" class="inline-block px-10 py-4 bg-white text-darker font-bold rounded hover:bg-nvidia transition-colors">
+                Get in Touch
+            </a>
+            <div class="mt-12 flex justify-center space-x-8 text-gray-500">
+                <a href="#" class="hover:text-white transition-colors">https://github.com/Khazar451</a>
+                <a href="#" class="hover:text-white transition-colors">https://www.linkedin.com/in/khazar-abdullayev-0035a0335/</a>
+                <a href="#" class="hover:text-white transition-colors">khazarabdullayev133@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-gray-600 text-sm border-t border-gray-800 bg-darker">
+        <p>&copy; Designed & Built by [Khazar Abdullayev].</p>
+    </footer>
+
+</body>
+</html>
