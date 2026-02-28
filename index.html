@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume | Computer Engineering Student</title>
+    <meta name="description" content="Computer Engineering Student | AI & Java Developer | Khazar Abdullayev">
+    <meta name="theme-color" content="#76b900">
+    <meta property="og:title" content="Khazar Abdullayev - Computer Engineer">
+    <meta property="og:description" content="Building intelligent systems that think and act">
+    <meta property="og:type" content="website">
+    <title>Khazar Abdullayev | Computer Engineer & AI Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
@@ -13,10 +19,30 @@
                         nvidia: '#76b900',
                         dark: '#1a1a1a',
                         darker: '#111111',
-                        card: '#242424'
+                        card: '#242424',
+                        accent: '#00d9ff'
                     },
                     fontFamily: {
                         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        glow: {
+                            '0%, 100%': { boxShadow: '0 0 5px rgba(118, 185, 0, 0.5)' },
+                            '50%': { boxShadow: '0 0 20px rgba(118, 185, 0, 0.8)' },
+                        },
                     }
                 }
             }
@@ -27,189 +53,441 @@
         ::-webkit-scrollbar-track { background: #111; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #76b900; }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #76b900, #00d9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-effect {
+            background: rgba(36, 36, 36, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(118, 185, 0, 0.1);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(118, 185, 0, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body class="bg-darker text-gray-300 font-sans antialiased selection:bg-nvidia selection:text-black">
-
     <nav class="fixed w-full z-50 bg-darker/90 backdrop-blur-sm border-b border-gray-800">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-white tracking-tighter">
-                <span class="text-nvidia">&lt;</span>Dev<span class="text-nvidia">/&gt;</span>
+            <a href="#home" class="text-xl font-bold text-white tracking-tighter hover:text-nvidia transition-colors">
+                <span class="text-nvidia">&lt;</span>Dev<span class="text-nvidia">&gt;</span>
             </a>
-            <div class="space-x-8 text-sm font-medium hidden md:block">
+            <div class="space-x-8 text-sm font-medium hidden md:flex items-center">
                 <a href="#about" class="hover:text-nvidia transition-colors">About</a>
                 <a href="#stack" class="hover:text-nvidia transition-colors">Tech Stack</a>
                 <a href="#projects" class="hover:text-nvidia transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-nvidia transition-colors">Experience</a>
                 <a href="#contact" class="hover:text-nvidia transition-colors">Contact</a>
             </div>
         </div>
     </nav>
-
-    <section class="min-h-screen flex items-center justify-center pt-16">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <div class="inline-block mb-4 px-3 py-1 rounded-full bg-nvidia/10 text-nvidia text-sm font-mono border border-nvidia/20">
-                Open to Internship Opportunities
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-nvidia/10 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-block mb-6 px-4 py-2 rounded-full bg-nvidia/10 text-nvidia text-sm font-mono border border-nvidia/30 animate-fade-in">
+                <i class="fas fa-star mr-2"></i>Open to Internship Opportunities
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+            
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight animate-slide-up">
                 Building Systems that <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-nvidia to-green-400">Think & Act.</span>
+                <span class="gradient-text">Think & Act.</span>
             </h1>
-            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Computer Engineering Student at Manisa Celal Bayar University. 
-                Merging strong Java foundations with emerging AI technologies.
+            
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in">
+                Computer Engineering Student at Manisa Celal Bayar University.
+                Passionate about AI, Java development, and creating intelligent solutions that make an impact.
             </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#projects" class="px-8 py-3 bg-nvidia text-darker font-bold rounded hover:bg-green-400 transition-colors">
-                    View Projects
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4 animate-slide-up">
+                <a href="#projects" class="px-8 py-3 bg-nvidia text-darker font-bold rounded-lg hover:bg-green-400 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-rocket mr-2"></i>View Projects
                 </a>
-                <a href="#contact" class="px-8 py-3 border border-gray-700 rounded hover:border-nvidia hover:text-nvidia transition-colors">
-                    Contact Me
+                <a href="#contact" class="px-8 py-3 border-2 border-nvidia text-nvidia font-bold rounded-lg hover:bg-nvidia/10 transition-all duration-300">
+                    <i class="fas fa-envelope mr-2"></i>Get in Touch
+                </a>
+            </div>
+
+            <div class="mt-12 flex justify-center gap-6">
+                <a href="https://github.com/Khazar451" target="_blank" class="text-gray-400 hover:text-nvidia transition-colors text-2xl">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#contact" class="text-gray-400 hover:text-nvidia transition-colors text-2xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#contact" class="text-gray-400 hover:text-nvidia transition-colors text-2xl">
+                    <i class="fab fa-twitter"></i>
                 </a>
             </div>
         </div>
     </section>
+    <section id="about" class="py-20 px-6 bg-dark/50">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-12 text-center">
+                About <span class="gradient-text">Me</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg text-gray-400 mb-6 leading-relaxed">
+                        I'm Khazar Abdullayev, a Computer Engineering student at Manisa Celal Bayar University with a passion for solving complex problems through code. My journey combines a strong foundation in Java with emerging expertise in AI technologies.
+                    </p>
+                    
+                    <p class="text-lg text-gray-400 mb-6 leading-relaxed">
+                        I believe in building systems that don't just work, but think. Whether it's developing data structures, creating AI prototypes, or designing scalable solutions, I approach every challenge with curiosity and precision.
+                    </p>
 
-    <section id="about" class="py-20 bg-dark">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-nvidia pl-4">About Me</h2>
-            <div class="prose prose-invert max-w-none text-gray-400">
-                <p class="mb-4">
-                    I am a second-year Computer Engineering student based in Turkey (originally from Azerbaijan). My academic journey has been defined by a rigorous focus on the fundamentals: <strong>Data Structures, Algorithms, and Automata Theory</strong>.
-                </p>
-                <p class="mb-4">
-                    While my core coursework has built a strong proficiency in <strong>Java and Spring Boot</strong>, my current passion lies in the intersection of software engineering and Artificial Intelligence. I am actively upskilling in <strong>Python for AI</strong>, with a specific interest in autonomous agents and Large Language Models.
-                </p>
-                <p>
-                    When I'm not coding, I enjoy dissecting complex systems—whether that's analyzing electric circuits.
-                </p>
+                    <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+                        Currently, I'm actively seeking internship opportunities where I can contribute to meaningful projects while continuing to grow my technical skills. I'm also an open source contributor, currently working with Open Labs on the development of HiperHealth.
+                    </p>
+
+                    <div class="flex gap-4">
+                        <a href="https://github.com/Khazar451" target="_blank" class="px-6 py-2 bg-nvidia/20 border border-nvidia text-nvidia rounded-lg hover:bg-nvidia hover:text-darker transition-all">
+                            View GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="glass-effect p-8 rounded-xl">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center">
+                        <i class="fas fa-user-graduate text-nvidia mr-3"></i>Education
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-nvidia font-bold text-lg">Computer Engineering</h4>
+                            <p class="text-gray-400">Manisa Celal Bayar University</p>
+                            <p class="text-sm text-gray-500 mt-2">Currently Enrolled</p>
+                        </div>
+                        <div>
+                            <h4 class="text-nvidia font-bold text-lg">Open Source Contributor</h4>
+                            <p class="text-gray-400">Open Labs - HiperHealth</p>
+                            <p class="text-sm text-gray-500 mt-2">Active Development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="stack" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-12 text-center">
+                Tech <span class="gradient-text">Stack</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-effect p-6 rounded-xl hover:border-nvidia transition-all">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center">
+                        <i class="fas fa-code text-nvidia mr-2"></i>Languages
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>Java
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>Python
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>HTML/CSS
+                        </li>
+                    </ul>
+                </div>
+                <div class="glass-effect p-6 rounded-xl hover:border-nvidia transition-all">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center">
+                        <i class="fas fa-tools text-nvidia mr-2"></i>Frameworks
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>Tailwind CSS
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>Spring Boot
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>Git
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>GitHub Actions
+                        </li>
+                    </ul>
+                </div>
+                <div class="glass-effect p-6 rounded-xl hover:border-nvidia transition-all">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center">
+                        <i class="fas fa-brain text-nvidia mr-2"></i>AI & ML
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>Machine Learning(Learning)
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>AI Prompt Design
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>GitHub Copilot
+                        </li>
+                    </ul>
+                </div>
+                <div class="glass-effect p-6 rounded-xl hover:border-nvidia transition-all">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center">
+                        <i class="fas fa-star text-nvidia mr-2"></i>Specialties
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>Data Structures
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>Algorithms
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>Automata Theory
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-nvidia rounded-full mr-3"></span>Web Development
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="stack" class="py-20">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white mb-12 text-center">Technical Arsenal</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                
-                <div class="p-6 bg-card rounded-lg border border-gray-800 hover:border-nvidia/50 transition-colors group">
-                    <h3 class="text-nvidia font-mono mb-2">01. Languages</h3>
-                    <ul class="text-sm space-y-1">
-                        <li>Java</li>
-                        <li>Python (AI Focus)</li>
-                    </ul>
-                </div>
+    <section id="projects" class="py-20 px-6 bg-dark/50">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-12 text-center">
+                Featured <span class="gradient-text">Projects</span>
+            </h2>
 
-                <div class="p-6 bg-card rounded-lg border border-gray-800 hover:border-nvidia/50 transition-colors group">
-                    <h3 class="text-nvidia font-mono mb-2">02. Frameworks</h3>
-                    <ul class="text-sm space-y-1">
-                        <li>Spring Boot</li>
-                        <li>LangChain (Learning)</li>
-                        <li>NVIDIA NIMs (Goal)</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 bg-card rounded-lg border border-gray-800 hover:border-nvidia/50 transition-colors group">
-                    <h3 class="text-nvidia font-mono mb-2">03. CS Core</h3>
-                    <ul class="text-sm space-y-1">
-                        <li>Data Structures</li>
-                        <li>Automata Theory</li>
-                        <li>Python</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 bg-card rounded-lg border border-gray-800 hover:border-nvidia/50 transition-colors group">
-                    <h3 class="text-nvidia font-mono mb-2">04. Tools</h3>
-                    <ul class="text-sm space-y-1">
-                        <li>Git & GitHub</li>
-                        <li>Claude AI</li>
-                        <li>VS Code</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-20 bg-dark">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white mb-12 border-l-4 border-nvidia pl-4">Featured Projects</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                
-                <div class="bg-card p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition-all">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-white">Digital Culture Map (TÜBİTAK 2209-B)</h3>
-                        <span class="text-xs font-mono bg-blue-900 text-blue-300 px-2 py-1 rounded">Research</span>
+                <div class="project-card glass-effect p-8 rounded-xl transition-all duration-300 cursor-pointer">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-white">Harry - AI Prototype</h3>
+                        <a href="https://github.com/Khazar451/harry-the-prototype-AI" target="_blank" class="text-nvidia hover:text-green-400 transition-colors">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
                     </div>
-                    <p class="text-gray-400 text-sm mb-6">
-                        Designed a project for "Interactive Digital Culture Map with Multi-layered Acoustic and Environmental Monitoring." Focuses on preserving urban cultural heritage through sensor data.
+                    <p class="text-gray-400 mb-4">
+                        An intelligent AI workplace system demonstrating advanced prompt engineering and LLM integration. Designed to think and act autonomously.
                     </p>
-                    <div class="flex gap-2 text-xs font-mono text-gray-500">
-                        <span>#ML/AI</span> <span>#DataAnalysis</span> <span>#Research</span>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-nvidia/20 text-nvidia text-xs rounded-full border border-nvidia/30">Python</span>
+                        <span class="px-3 py-1 bg-nvidia/20 text-nvidia text-xs rounded-full border border-nvidia/30">AI/ML</span>
+                        <span class="px-3 py-1 bg-nvidia/20 text-nvidia text-xs rounded-full border border-nvidia/30">LLM</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Last updated: Feb 2026</p>
+                </div>
+
+                <div class="project-card glass-effect p-8 rounded-xl transition-all duration-300 cursor-pointer">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-white">DSAP - Data Structures</h3>
+                        <a href="https://github.com/Khazar451/DSAP1" target="_blank" class="text-nvidia hover:text-green-400 transition-colors">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Comprehensive implementation of data structures and algorithms. Includes advanced data structure concepts and algorithm optimization techniques.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-nvidia/20 text-nvidia text-xs rounded-full border border-nvidia/30">Java</span>
+                        <span class="px-3 py-1 bg-nvidia/20 text-nvidia text-xs rounded-full border border-nvidia/30">Algorithms</span>
+                        <span class="px-3 py-1 bg-nvidia/20 text-nvidia text-xs rounded-full border border-nvidia/30">DSA</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Last updated: Feb 2026</p>
+                </div>
+                <div class="project-card glass-effect p-8 rounded-xl transition-all duration-300 cursor-pointer">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-white">HiperHealth</h3>
+                        <a href="https://github.com/OpenLabs-Pisco/hiperhealth" target="_blank" class="text-nvidia hover:text-green-400 transition-colors">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Open source healthcare solution developed with Open Labs. Contributing to innovative health technology that makes a difference in people's lives.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-nvidia/20 text-nvidia text-xs rounded-full border border-nvidia/30">Open Source</span>
+                        <span class="px-3 py-1 bg-nvidia/20 text-nvidia text-xs rounded-full border border-nvidia/30">Healthcare</span>
+                        <span class="px-3 py-1 bg-nvidia/20 text-nvidia text-xs rounded-full border border-nvidia/30">Community</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Active Development</p>
+                </div>
+                <div class="project-card glass-effect p-8 rounded-xl transition-all duration-300 cursor-pointer">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-white">JPMC Forage Program</h3>
+                        <a href="https://github.com/Khazar451/forage-midas" target="_blank" class="text-nvidia hover:text-green-400 transition-colors">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Advanced Software Engineering experience from JP Morgan Chase. Professional-grade project implementation and best practices.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-nvidia/20 text-nvidia text-xs rounded-full border border-nvidia/30">Software Engineering</span>
+                        <span class="px-3 py-1 bg-nvidia/20 text-nvidia text-xs rounded-full border border-nvidia/30">Best Practices</span>
+                        <span class="px-3 py-1 bg-nvidia/20 text-nvidia text-xs rounded-full border border-nvidia/30">Enterprise</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Last updated: Aug 2024</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://github.com/Khazar451" target="_blank" class="inline-block px-8 py-3 border-2 border-nvidia text-nvidia font-bold rounded-lg hover:bg-nvidia hover:text-darker transition-all">
+                    <i class="fab fa-github mr-2"></i>View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="experience" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-12 text-center">
+                Experience & <span class="gradient-text">Achievements</span>
+            </h2>
+
+            <div class="space-y-8">
+                <div class="glass-effect p-8 rounded-xl border-l-4 border-nvidia">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Open Source Contributor</h3>
+                            <p class="text-nvidia font-semibold mt-2">Open Labs - HiperHealth</p>
+                            <p class="text-gray-400 mt-1">Contributing to innovative healthcare technology and open source development</p>
+                        </div>
+                        <span class="px-4 py-2 bg-nvidia/20 text-nvidia text-sm rounded-lg">Active</span>
                     </div>
                 </div>
 
-                <div class="bg-card p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition-all">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-white">JPMorgan Chase Virtual Internship</h3>
-                        <span class="text-xs font-mono bg-green-900 text-green-300 px-2 py-1 rounded">Enterprise</span>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-6">
-                        Completed backend engineering tasks involving <strong>Java Spring Boot</strong>. Patched proprietary codebases and implemented RESTful API endpoints for financial data visualization.
-                    </p>
-                    <div class="flex gap-2 text-xs font-mono text-gray-500">
-                        <span>#Java</span> <span>#SpringBoot</span> <span>#Backend</span>
+                <div class="glass-effect p-8 rounded-xl border-l-4 border-accent">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">JP Morgan Chase Forage Program</h3>
+                            <p class="text-accent font-semibold mt-2">Advanced Software Engineering</p>
+                            <p class="text-gray-400 mt-1">Professional software development experience with enterprise-grade practices</p>
+                        </div>
+                        <span class="px-4 py-2 bg-accent/20 text-accent text-sm rounded-lg">2024</span>
                     </div>
                 </div>
 
-                <div class="bg-card p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition-all">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-white">Library & E-Commerce Systems</h3>
-                        <span class="text-xs font-mono bg-purple-900 text-purple-300 px-2 py-1 rounded">Academic</span>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-6">
-                        Developed object-oriented applications during university coursework. Features include user authentication, inventory management, and custom data persistence.
-                    </p>
-                    <div class="flex gap-2 text-xs font-mono text-gray-500">
-                        <span>#OOP</span> <span>#Java</span> <span>#SystemDesign</span>
+                <div class="glass-effect p-8 rounded-xl border-l-4 border-nvidia">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">University Computer Engineering</h3>
+                            <p class="text-nvidia font-semibold mt-2">Manisa Celal Bayar University</p>
+                            <p class="text-gray-400 mt-1">Strong foundation in algorithms, data structures, and software engineering principles</p>
+                        </div>
+                        <span class="px-4 py-2 bg-nvidia/20 text-nvidia text-sm rounded-lg">Ongoing</span>
                     </div>
                 </div>
+            </div>
 
-                <div class="bg-card p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition-all">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold text-white">Algorithmic Challenges</h3>
-                        <span class="text-xs font-mono bg-yellow-900 text-yellow-300 px-2 py-1 rounded">Logic</span>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-6">
-                        Solved complex logic problems including the HENNGE admission challenge (Recursion & TOTP) and implemented custom Data Structures like a Binary Search Tree (BST) checker.
-                    </p>
-                    <div class="flex gap-2 text-xs font-mono text-gray-500">
-                        <span>#Algorithms</span> <span>#Recursion</span> <span>#DataStructures</span>
-                    </div>
+            <div class="grid md:grid-cols-3 gap-6 mt-12">
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2">4+</div>
+                    <p class="text-gray-400">Programming Languages</p>
                 </div>
-
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2">10+</div>
+                    <p class="text-gray-400">Projects Completed</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2">100%</div>
+                    <p class="text-gray-400">Dedication to Excellence</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 text-center">
-        <div class="max-w-2xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white mb-6">Ready to Collaborate?</h2>
-            <p class="text-gray-400 mb-10">
-                I am currently open to summer internships and research opportunities in AI and Software Engineering.
-            </p>
-            <a href="mailto:khazarabdullayev133@gmail.com" class="inline-block px-10 py-4 bg-white text-darker font-bold rounded hover:bg-nvidia transition-colors">
-                Get in Touch
-            </a>
-            <div class="mt-12 flex justify-center space-x-8 text-gray-500">
-                <a href="#" class="hover:text-white transition-colors">https://github.com/Khazar451</a>
-                <a href="#" class="hover:text-white transition-colors">https://www.linkedin.com/in/khazar-abdullayev-0035a0335/</a>
-                <a href="#" class="hover:text-white transition-colors">khazarabdullayev133@gmail.com</a>
+    <section id="contact" class="py-20 px-6 bg-dark/50">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-12 text-center">
+                Let's <span class="gradient-text">Connect</span>
+            </h2>
+
+            <div class="glass-effect p-12 rounded-xl">
+                <p class="text-gray-400 text-lg text-center mb-12">
+                    I'm always interested in hearing about new opportunities and interesting projects. Whether you have a question or just want to say hi, feel free to reach out!
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <a href="https://github.com/Khazar451" target="_blank" class="flex items-center p-4 rounded-lg border border-gray-700 hover:border-nvidia hover:bg-nvidia/5 transition-all group">
+                            <i class="fab fa-github text-2xl text-nvidia mr-4"></i>
+                            <div>
+                                <p class="text-white font-semibold group-hover:text-nvidia transition-colors">GitHub</p>
+                                <p class="text-sm text-gray-500">@Khazar451</p>
+                            </div>
+                        </a>
+
+                        <a href="mailto:khazarabdullayev133@gmail.com" class="flex items-center p-4 rounded-lg border border-gray-700 hover:border-nvidia hover:bg-nvidia/5 transition-all group">
+                            <i class="fas fa-envelope text-2xl text-nvidia mr-4"></i>
+                            <div>
+                                <p class="text-white font-semibold group-hover:text-nvidia transition-colors">Email</p>
+                                <p class="text-sm text-gray-500">Get in Touch</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/khazar-abdullayev-0035a0335/" class="flex items-center p-4 rounded-lg border border-gray-700 hover:border-nvidia hover:bg-nvidia/5 transition-all group">
+                            <i class="fab fa-linkedin text-2xl text-nvidia mr-4"></i>
+                            <div>
+                                <p class="text-white font-semibold group-hover:text-nvidia transition-colors">LinkedIn</p>
+                                <p class="text-sm text-gray-500">Connect with Me</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="p-8 bg-darker rounded-lg border border-gray-700">
+                        <h3 class="text-xl font-bold text-white mb-6">Quick Contact</h3>
+                        <div class="space-y-4 text-gray-400">
+                            <p class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-nvidia mr-3 mt-1 flex-shrink-0"></i>
+                                <span>Manisa, Turkey</span>
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-briefcase text-nvidia mr-3 mt-1 flex-shrink-0"></i>
+                                <span>Open to Internship Opportunities</span>
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-code-branch text-nvidia mr-3 mt-1 flex-shrink-0"></i>
+                                <span>Open Source Contributor at Open Labs</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-    <footer class="py-8 text-center text-gray-600 text-sm border-t border-gray-800 bg-darker">
-        <p>&copy; Designed & Built by Khazar Abdullayev.</p>
+    <footer class="py-8 px-6 border-t border-gray-800">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-center md:text-left mb-4 md:mb-0">
+                    © 2026 Khazar Abdullayev. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/Khazar451" target="_blank" class="text-gray-500 hover:text-nvidia transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-nvidia transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-nvidia transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 
 </body>
